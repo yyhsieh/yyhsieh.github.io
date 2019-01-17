@@ -1,4 +1,3 @@
-# Dynamic RNN in Tensorflow
 
 https://blog.csdn.net/qq_23142123/article/details/78486303
 https://blog.csdn.net/qq_35203425/article/details/79572514
