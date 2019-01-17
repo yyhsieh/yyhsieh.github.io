@@ -1,3 +1,9 @@
+---
+layout: default
+title:  "Dynamic RNN in Tensorflow!"
+date:   2019-01-17 16:44:00
+categories: main
+---
 
 為了處理不同長度的input sequence，可以自動handle句子有不同長度
 需要padding/去掉padding的處理，進而可以節省運算的資源。
