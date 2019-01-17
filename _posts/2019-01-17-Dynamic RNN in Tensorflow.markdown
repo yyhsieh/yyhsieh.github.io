@@ -1,7 +1,4 @@
 
-https://blog.csdn.net/qq_23142123/article/details/78486303
-https://blog.csdn.net/qq_35203425/article/details/79572514
-
 為了處理不同長度的input sequence，可以自動handle句子有不同長度
 需要padding/去掉padding的處理，進而可以節省運算的資源。
 
@@ -54,4 +51,7 @@ with tf.Session() as sess:
     ## RNNstates.h: last output state
 
 {% endhighlight %}
+
+[參考資料1](https://blog.csdn.net/qq_23142123/article/details/78486303)
+[參考資料2](https://blog.csdn.net/qq_35203425/article/details/79572514)
 
