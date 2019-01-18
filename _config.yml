@@ -112,9 +112,9 @@ author:
   location         : "Taiwan, Taipei"
   email            : D06943001@ntu.edu.tw
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:D06943001@ntu.edu.tw
+    - #label: "Email"
+      #icon: "fas fa-fw fa-envelope-square"
+      #url: mailto:D06943001@ntu.edu.tw
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
