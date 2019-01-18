@@ -281,13 +281,13 @@ compress_html:
   ignore:
     envs: development
 
-collections:
-  tags:
-    output: true
-    permalink: /tags/:name/ # optional
-  categories:
-    output: true
-    permalink: /:name/ # optional
+#collections:
+#  tags:
+#    output: true
+#    permalink: /tags/:name/ # optional
+#  categories:
+#    output: true
+#    permalink: /:name/ # optional
 
 
 # Defaults
@@ -309,4 +309,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-      
