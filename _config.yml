@@ -227,6 +227,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-archives
   - jekyll-gist
   - jekyll-feed
   - jemoji
@@ -240,10 +241,6 @@ whitelist:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-
-
-plugins:
-  - jekyll-archives
 
 # Archives
 #  Type
@@ -265,16 +262,16 @@ collection_archive:
   type: liquid
   path: /collections/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 
 # HTML Compression
@@ -284,13 +281,13 @@ compress_html:
   ignore:
     envs: development
 
-#collections:
-#  tags:
-#    output: true
-#    permalink: /tags/:name/ # optional
-#  categories:
-#    output: true
-#    permalink: /:name/ # optional
+collections:
+  tags:
+    output: true
+    permalink: /tags/:name/ # optional
+  categories:
+    output: true
+    permalink: /:name/ # optional
 
 
 # Defaults
