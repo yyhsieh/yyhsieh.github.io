@@ -288,6 +288,9 @@ collections:
   categories:
     output: true
     permalink: /:name/ # optional
+  MachineLearning:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -309,3 +312,11 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _MachineLearning
+  - scope:
+      path: ""
+      type: MachineLearning
+    values:
+      layout: single
+      author_profile: true
+      share: true
