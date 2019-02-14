@@ -12,6 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes@4.15.1"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -40,7 +41,7 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
+    #theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
@@ -262,7 +263,7 @@ collection_archive:
   type: jekyll-archives
   path: /collections/
 # https://github.com/jekyll/jekyll-archives
-#jekyll-archives:
+# jekyll-archives:
 #  enabled:
 #    - categories
 #    - tags
@@ -288,10 +289,6 @@ collections:
   categories:
     output: true
     permalink: /:name/ # optional
-  MachineLearning:
-    output: true
-    permalink: /:collection/:path/
-
 
 # Defaults
 defaults:
