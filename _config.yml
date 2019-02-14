@@ -259,9 +259,17 @@ category_archive:
 tag_archive:
   type: jekyll-archives
   path: /tags/
-collection_archive:
-  type: jekyll-archives
-  path: /collections/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+    
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #  enabled:
