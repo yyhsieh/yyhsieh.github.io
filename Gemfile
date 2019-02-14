@@ -1,3 +1,2 @@
 source "https://rubygems.org"
-gemspec
-gem 'jekyll-archives'
+gem "github-pages", group: :jekyll_plugins
