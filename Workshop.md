@@ -1,8 +1,8 @@
 ---
 title: Workshop
 layout: archieve
-permalink: /categories/Workshop/
-taxonomy: Workshop
+permalink: /categories/workshop/
+taxonomy: workshop
 author_profile: true
 ---
 
