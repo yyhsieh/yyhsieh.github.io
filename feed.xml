@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-15T15:06:54+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YYH Hello World</title><subtitle>A PhD Candidate in National Taiwan University(NTU), Taipei, Taiwan.</subtitle><author><name>Yi-Yen Hsieh</name><email>D06943001@ntu.edu.tw</email></author><entry><title type="html">AI VC Summer Camp Day1</title><link href="http://localhost:4000/workshop/AI-VC-Summer-Camp-Day-1/" rel="alternate" type="text/html" title="AI VC Summer Camp Day1" /><published>2018-08-06T00:00:00+08:00</published><updated>2018-08-06T00:00:00+08:00</updated><id>http://localhost:4000/workshop/AI-VC-Summer-Camp-Day-1</id><content type="html" xml:base="http://localhost:4000/workshop/AI-VC-Summer-Camp-Day-1/">&lt;p&gt;2018暑假辦在清大的AI VC Summer Camp紀錄&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1503.08895.pdf&quot;&gt;投影片連結&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;memn2n&quot;&gt;MemN2N&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/UAa7fCN.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;place all inputs in the memory
+和RNN不同的地方在於先把所有的input data存到memory中，
+只控制memory的作用
+但RNN是一次input 一筆data進來&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/zjfl7iE.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;advantages&quot;&gt;Advantages&lt;/h3&gt;
+&lt;p&gt;1) More generic input format
+(任何vector都可以input)
+像是bag of words / image feature / feature position
+2) out-of-order access to input data
+3) less distracted by unimportant inputs
+4) longer term memorization
+5) no vanishing / exploding gradients 
+(不會重複propagate W)&lt;/p&gt;
+
+&lt;h2 id=&quot;disadvantages&quot;&gt;Disadvantages&lt;/h2&gt;
+
+&lt;p&gt;讓model決定哪一段memory要access，
+ 而不是用來訓練weights&lt;/p&gt;
+
+&lt;h2 id=&quot;end-to-end-memory-networks&quot;&gt;End-to-End Memory Networks&lt;/h2&gt;
+
+&lt;p&gt;用bag-of-words來表示文字 (query embedding)
+&lt;img src=&quot;https://i.imgur.com/IFoWS0z.png&quot; alt=&quot;&quot; /&gt;
+把input分成兩路餵進output memory和input memory中&lt;/p&gt;
+
+&lt;p&gt;input memory:計算 attention weights
+second memory:access memory slots(用來訓練哪個位置的memory是需要被access的) decide which memory slot should be accessed&lt;/p&gt;
+
+&lt;p&gt;soft attention (使用softmax): probability of accessing memory slots&lt;/p&gt;
+
+&lt;p&gt;Dimension of memory / bag-of-words 必須在事前先決定好
+Dimension of W:R^(|V|xD)&lt;/p&gt;
+
+&lt;h3 id=&quot;multi-hop-reasoning&quot;&gt;Multi-hop Reasoning&lt;/h3&gt;
+&lt;p&gt;對於整個input/output memory unit access多次&lt;/p&gt;
+
+&lt;h4 id=&quot;weight-sharing&quot;&gt;Weight sharing:&lt;/h4&gt;
+&lt;p&gt;1) adjacent (前一層的output W是下一層的input W)
+2) layer-wise in/out embeddings are the same across all layers&lt;/p&gt;
+
+&lt;h3 id=&quot;netowork實作中的技巧&quot;&gt;Netowork實作中的技巧&lt;/h3&gt;
+&lt;p&gt;1) BOW(Setence representation)
+2) Position encoding (Setence representation)
+3) temportal encoding: change the order of sentence input will change the results, is a 需要被學習的 matrix，用於 encode input句子的順序
+4) 在空的memory中加入10% random noise做initialization&lt;/p&gt;
+
+&lt;p&gt;joint training: 同時訓練多個模型
+比較多hops有助於performance提升（K=3）&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;key-value-memory-networks-kv-memnn-neural-programming&quot;&gt;Key-Value Memory Networks (KV-MemNN): Neural Programming&lt;/h2&gt;
+
+&lt;p&gt;https://arxiv.org/pdf/1606.03126.pdf&lt;/p&gt;
+
+&lt;p&gt;generalize the way context is stored in the memory
+structured memories as key-value&lt;/p&gt;
+
+&lt;h3 id=&quot;key-value-paired-memory&quot;&gt;Key-Value paired memory&lt;/h3&gt;
+&lt;p&gt;key:用來決定哪個memory要access
+value：實際上儲存的data（match the memory to the response）
+key和value可以是words/ sentence / vectors&lt;/p&gt;
+
+&lt;h3 id=&quot;key-hashing&quot;&gt;Key Hashing&lt;/h3&gt;
+&lt;p&gt;given a question x, pre-select 一個小的subset for memory
+任何的hashing function都可以用 (inverted idx / LSH)&lt;/p&gt;
+
+&lt;h3 id=&quot;key-addressing&quot;&gt;Key Addressing&lt;/h3&gt;
+&lt;p&gt;relevance probability of each memory slot to x&lt;/p&gt;
+
+&lt;h3 id=&quot;value-reading&quot;&gt;Value Reading&lt;/h3&gt;
+&lt;p&gt;taking avg of memory values&lt;/p&gt;
+
+&lt;h3 id=&quot;如何建立-key-value-的關係&quot;&gt;如何建立 key-value 的關係&lt;/h3&gt;
+&lt;p&gt;KV triple: subject relation object&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;neural-turing-machines&quot;&gt;Neural Turing Machines&lt;/h2&gt;
+&lt;p&gt;https://arxiv.org/pdf/1410.5401.pdf&lt;/p&gt;
+
+&lt;p&gt;http://www.robots.ox.ac.uk/~tvg/publications/talks/NeuralTuringMachines.pdf&lt;/p&gt;
+
+&lt;h3 id=&quot;rnn-is-enough&quot;&gt;RNN is enough?&lt;/h3&gt;
+&lt;p&gt;如果只有幾個hidden state是否足以代表長的句子？
+-&amp;gt; 需要做memory augmentation
+-&amp;gt; extend the capability of NN by coupling to external memory&lt;/p&gt;
+
+&lt;h3 id=&quot;artificial-working-memory&quot;&gt;Artificial working memory&lt;/h3&gt;
+&lt;p&gt;using 額外的process和external memory 互動&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/KuHuxfb.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;blurry-read--write&quot;&gt;Blurry Read / Write&lt;/h3&gt;
+&lt;p&gt;a set of parallel R/W heads
+透過controller來控制memory&lt;/p&gt;
+
+&lt;p&gt;soft attention on memory highly sparsely&lt;/p&gt;
+
+&lt;h3 id=&quot;content-addressing&quot;&gt;Content Addressing&lt;/h3&gt;
+&lt;p&gt;根據內容決定要拿哪裡的memory而不是看storage的位置，It is typically used for high-speed storage and retrieval of fixed content
+focuses attention on locations based on the similarity between their current values and values emitted by the controller.&lt;/p&gt;
+
+&lt;h3 id=&quot;intepolation-for-location-based-addressing&quot;&gt;Intepolation for Location-based addressing&lt;/h3&gt;
+&lt;p&gt;The location-based addressing mechanism is designed to facilitate both simple iteration across the locations of the memory and random-access jumps. It does so by implementing a rotational shift of a weighting.
+gate = 1 : 使用目前的memory,忽略過去一個time step的
+gate = 0 : 使用過去一個time step的memory&lt;/p&gt;
+
+&lt;h3 id=&quot;convoliutional-shift&quot;&gt;Convoliutional Shift&lt;/h3&gt;
+&lt;p&gt;allowed integers shift
+（通常是找前後幾個time-step的memory）&lt;/p&gt;
+
+&lt;h3 id=&quot;sharpening&quot;&gt;Sharpening&lt;/h3&gt;
+
+&lt;h2 id=&quot;memnn-vs-ntm&quot;&gt;MemNN v.s. NTM&lt;/h2&gt;
+&lt;p&gt;MemNN: memory是static，只有關注如何retrive/read information from memory
+NTM: 持續不斷寫入跟讀取，network是用來學習「何時要read/write memory」/ memory的interface會比較彈性，但結構就比較複雜&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;differentiable-neural-computers&quot;&gt;Differentiable Neural Computers&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/VcdFMm5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有比較複雜的memory addressing mechanism，和NTM相比&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;加上 Dynamic memory allocation (writing)&lt;/li&gt;
+  &lt;li&gt;加上 Temporl memory linkage (reading)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reasons-of-dynamic-memory-allocation&quot;&gt;Reasons of dynamic memory allocation&lt;/h3&gt;
+&lt;p&gt;1) 因為NTM只有在連續的memory blocks allocate memory，但這樣的話需要管理記憶體（否則資料會沒有ptr指向&amp;amp;難處理）
+2) 沒辦法釋放memory
+3) location addressing 需要大量的連續記憶體&lt;/p&gt;
+
+&lt;h3 id=&quot;reasons-of-temporal-memory-linkage&quot;&gt;Reasons of Temporal memory linkage&lt;/h3&gt;
+&lt;p&gt;1) search complexity by time
+2) preserving temporal order (track the order of writing)&lt;/p&gt;
+
+&lt;h3 id=&quot;ntm和dnc的差異&quot;&gt;NTM和DNC的差異&lt;/h3&gt;
+&lt;p&gt;1) DNC有更多的scalar gate用以計算weights間的內插值
+2) DNC引入memory retention vector用以更新usage vector：
+    a) 如果在前一個time step該memory的位置是write，則其retention weight應該比較大
+    b) 如果在前一個time step該memory的位置是read，則其retention weight應該比較小&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/eZ1GY93.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;temporal-memory-linkage-linkage-matrix-l_t&quot;&gt;Temporal Memory Linkage (Linkage matrix, L_{t})&lt;/h3&gt;
+&lt;p&gt;represent the writing order of memory slots&lt;/p&gt;
+
+&lt;h4 id=&quot;write-weighting&quot;&gt;Write weighting&lt;/h4&gt;
+&lt;p&gt;1) Content-based addressing
+2) Dynamic memory allocation&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/1AWbfGH.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://i.imgur.com/Ci2K0PG.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;read-weighting&quot;&gt;Read weighting&lt;/h4&gt;
+&lt;p&gt;1) Content-based addressing
+2) Temporal memory linkage&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/a8q8i7S.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://i.imgur.com/sLz8Blz.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Yi-Yen Hsieh</name><email>D06943001@ntu.edu.tw</email></author><category term="Workshop-Note" /><category term="Machine-Learning" /><summary type="html">2018暑假辦在清大的AI VC Summer Camp紀錄</summary></entry></feed>
