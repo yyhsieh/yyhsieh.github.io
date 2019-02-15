@@ -291,8 +291,10 @@ compress_html:
 collections:
   categories:
     output: true
+  #  permalink: /:name/ # optional
   tags:
     output: true
+  #  permalink: /tags/:name/ # optional
   tensorflow:
     output: true
     permalink: /:collection/:path/
