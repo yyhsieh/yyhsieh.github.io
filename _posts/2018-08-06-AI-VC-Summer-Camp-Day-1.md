@@ -14,7 +14,7 @@ related: false
 author_profile: true
 ---
 
-2018暑假辦在清大的AI VC Summer Camp紀錄
+2018暑假辦在清大的AI VC Summer Camp紀錄，今天的內容主要：
 
 [投影片連結](https://arxiv.org/pdf/1503.08895.pdf)
 

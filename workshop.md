@@ -1,7 +1,7 @@
 ---
 title: Workshop
 layout: archive
-permalink: /categories/workshop/
+permalink: /workshop/
 taxonomy: workshop
 author_profile: true
 ---
