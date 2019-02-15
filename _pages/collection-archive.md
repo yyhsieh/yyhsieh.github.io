@@ -1,6 +1,6 @@
 ---
 title: "Posts by Collection"
-layout: collections
+layout: collection
 permalink: /collections/
 author_profile: true
 ---
