@@ -1,5 +1,6 @@
 ---
 title: "AI VC Summer Camp Day1"
+comments: true
 categories:
   - Workshop
 tags:

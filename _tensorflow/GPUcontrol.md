@@ -1,5 +1,6 @@
 ---
 title: "TensorFlow: GPU的相關控制"
+comments: true
 toc: True
 toc_sticky: True
 related: false

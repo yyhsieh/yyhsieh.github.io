@@ -1,5 +1,6 @@
 ---
 title: "TensorFlow 教學與心得"
+comments: true
 toc: false
 toc_sticky: false
 related: false

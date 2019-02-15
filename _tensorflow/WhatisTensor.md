@@ -1,5 +1,6 @@
 ---
 title: "TensorFlow: 什麼是Tensor"
+comments: true
 toc: True
 toc_sticky: True
 related: false
