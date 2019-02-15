@@ -3,7 +3,7 @@ title: "AI VC Summer Camp Day1"
 categories:
   - workshop
 tags:
-  - workshop
+  - workshop-note
   - machine-learning
 toc: true
 toc_sticky: true
