@@ -5,6 +5,7 @@ categories:
 tags:
   - Workshop-Note
   - Machine-Learning
+toc_label: Content
 toc: true
 toc_sticky: true
 related: false
