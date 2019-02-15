@@ -291,9 +291,9 @@ collections:
   #tags:
   #  output: true
   #  permalink: /tags/:name/ # optional
-  #categories:
-  #  output: true
-  #  permalink: /:name/ # optional
+  categories:
+    output: true
+    permalink: /:collection/:path/ # optional
   tensorflow:
     output: true
     permalink: /:collection/:path/
