@@ -5,8 +5,8 @@ permalink: /categories/workshop/AI-VC-Summer-Camp-Day-1/
 categories:
   - Workshop
 tags:
-  - Workshop-Note
-  - Machine-Learning
+  - Workshop Note
+  - Machine Learning
 toc_label: Content
 toc: true
 toc_sticky: true
