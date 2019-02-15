@@ -2,17 +2,17 @@
 main:
   - title: "About"
     url: /About/
-  - title: "Research Related"
+  - title: "Research"
     url: /categories/Research
   - title: "Lecture Note"
     url: /categories/lecture-note
-  - title: "Workshop Note"
+  - title: "Workshop"
     url: /categories/workshop
   - title: "TensorFlow"
     url: /tensorflow/main/
-  - title: "Year Archive"
+  - title: "Archive"
     url: /year-archive/
-  - title: "<svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16"></svg>"
+  - title: "Search"
     url: /search/
 
 tensorflow:
