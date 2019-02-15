@@ -288,12 +288,12 @@ compress_html:
     envs: development
 
 collections:
-  tags:
-    output: true
-    permalink: /:name/ # optional
-  categories:
-    output: true
-    permalink: /:name/ # optional
+  #tags:
+  #  output: true
+  #  permalink: /tags/:name/ # optional
+  #categories:
+  #  output: true
+  #  permalink: /:name/ # optional
   tensorflow:
     output: true
     permalink: /:collection/:path/
