@@ -433,8 +433,11 @@
 .nav__list .nav__items {
   font-size: 1.25rem;
 
+  .ul .il{
+    margin-bottom: 2em;
+  }
+
   a {
-    margin-bottom: 1em;
     color: inherit;
   }
 
@@ -492,6 +495,7 @@
   border-bottom: 1px solid $border-color;
 }
 
+.nav__sub-title {
 /*
      Table of contents navigation
      ========================================================================== */
