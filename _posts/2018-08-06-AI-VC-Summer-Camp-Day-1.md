@@ -1,6 +1,7 @@
 ---
 title: "AI VC Summer Camp Day1"
 comments: true
+permalink: /categories/workshop/AI-VC-Summer-Camp-Day-1/
 categories:
   - Workshop
 tags:
