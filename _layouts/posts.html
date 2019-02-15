@@ -28,13 +28,3 @@ layout: archive
   </section>
 {% endfor %}
 
- <div class="tags">
-      {% assign sortedTags = page.tags | sort %}
-      <small>Tags: </small>
-      {% for tag in sortedTags %}
-        <span class="tag">
-          <small> <a href="{{ site.baseurl }}/tag/{{ tag }}">&nbsp;#{{ tag }}</a></small>
-        </span>&nbsp;
-      {% endfor %}
-      <br>
-  </div>
