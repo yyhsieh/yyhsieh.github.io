@@ -14,6 +14,7 @@
 # remote_theme           : "mmistakes/minimal-mistakes"
 remote_theme: "mmistakes/minimal-mistakes@4.15.1"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+github: [metadata]
 
 # Site Settings
 locale                   : "en-US"
@@ -250,10 +251,10 @@ whitelist:
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
-  type: Liquid
+  type: jekyll-archives
   path: /categories/
 tag_archive:
-  type: Liquid
+  type: jekyll-archives
   path: /tags/
 
 jekyll-archives:
@@ -264,8 +265,8 @@ jekyll-archives:
     category: archive-taxonomy
     tag: archive-taxonomy
   permalinks:
-    category: '/category/:name/'
-    tag: '/tag/:name/'
+    category: '/categories/:name/'
+    tag: '/tags/:name/'
     TensorFlow: '/TensorFlow/:name/'
 
 # https://github.com/jekyll/jekyll-archives
@@ -288,12 +289,12 @@ compress_html:
     envs: development
 
 collections:
-  #categories:
-  #  output: true
-  #  permalink: /categories/:name/ # optional
-  #tags:
-  #  output: true
-  #  permalink: /tags/:name/ # optional
+  categories:
+    output: true
+    permalink: /:name/ # optional
+  tags:
+    output: true
+    permalink: /tags/:name/ # optional
   tensorflow:
     output: true
     permalink: /:collection/:path/
