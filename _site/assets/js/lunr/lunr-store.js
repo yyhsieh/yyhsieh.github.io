@@ -5,9 +5,9 @@ var store = [{
         "url": "http://localhost:4000/2009-07-02-edge-case-many-categories/",
         "teaser":null},{
         "title": "AI VC Summer Camp Day1",
-        "excerpt":"2018暑假辦在清大的AI VC Summer Camp紀錄 投影片連結 MemN2N place all inputs in the memory 和RNN不同的地方在於先把所有的input data存到memory中， 只控制memory的作用 但RNN是一次input 一筆data進來 Advantages 1) More generic input format (任何vector都可以input) 像是bag of words / image feature / feature position 2) out-of-order access to input data 3) less distracted by unimportant inputs 4) longer term memorization 5)...","categories": [],
-        "tags": ["Workshop","Machine-Learning"],
-        "url": "http://localhost:4000/AI-VC-Summer-Camp-Day-1/",
+        "excerpt":"2018暑假辦在清大的AI VC Summer Camp紀錄 投影片連結 MemN2N place all inputs in the memory 和RNN不同的地方在於先把所有的input data存到memory中， 只控制memory的作用 但RNN是一次input 一筆data進來 Advantages 1) More generic input format (任何vector都可以input) 像是bag of words / image feature / feature position 2) out-of-order access to input data 3) less distracted by unimportant inputs 4) longer term memorization 5)...","categories": ["workshop"],
+        "tags": ["workshop","machine-learning"],
+        "url": "http://localhost:4000/workshop/AI-VC-Summer-Camp-Day-1/",
         "teaser":null},{
         "title": "Edge Case: Many Tags",
         "excerpt":"This post has many tags.  ","categories": ["Edge Case"],
