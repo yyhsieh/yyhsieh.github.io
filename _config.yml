@@ -284,6 +284,7 @@ jekyll-archives:
 # HTML Compression
 # - http://jch.penibelst.de/
 compress_html:
+  comments: ["<!-- ", " -->"]
   clippings: all
   ignore:
     envs: development
