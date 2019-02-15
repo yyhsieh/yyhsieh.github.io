@@ -290,7 +290,7 @@ compress_html:
 collections:
   tags:
     output: true
-    permalink: /tags/:name/ # optional
+    permalink: /:name/ # optional
   categories:
     output: true
     permalink: /:name/ # optional
