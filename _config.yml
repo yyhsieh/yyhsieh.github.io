@@ -242,11 +242,11 @@ whitelist:
   - jekyll-include-cache
   #- jekyll-lunr-js-search
 
-#lunr_search:
-#  excludes: [rss.xml, atom.xml]
-#  stopwords: "stopwords.txt"
-#  min_length: 3
-#  js_dir: "/assets/js/lunr"
+lunr_search:
+  excludes: [rss.xml, atom.xml]
+  stopwords: "stopwords.txt"
+  min_length: 3
+  js_dir: "/assets/js/lunr"
 
 # Archives
 #  Type
