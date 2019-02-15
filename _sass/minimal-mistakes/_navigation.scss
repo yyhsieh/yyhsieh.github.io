@@ -222,7 +222,6 @@
     overflow: hidden;
 
     li {
-      line-height: 20px;
       -webkit-box-flex: 0;
       -ms-flex: none;
       flex: none;
@@ -432,7 +431,7 @@
 }
 
 .nav__list .nav__items {
-  margin: 0;
+  margin: 5px;
   font-size: 1.25rem;
 
   a {
