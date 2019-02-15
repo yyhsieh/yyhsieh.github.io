@@ -1,6 +1,6 @@
 ---
 title: Machine Learning
-layout: tag
+layout: archive
 permalink: /tags/machine-learning/
 taxonomy: machine-learning
 author_profile: true
