@@ -288,12 +288,18 @@ compress_html:
     envs: development
 
 collections:
-  categories:
-    output: true
-    permalink: /categories/:name/ # optional
   tags:
     output: true
     permalink: /tags/:name/ # optional
+  categories:
+    output: true
+    permalink: /:name/ # optional
+  #categories:
+  #  output: true
+  #  permalink: /categories/:name/ # optional
+  #tags:
+  #  output: true
+  #  permalink: /tags/:name/ # optional
   tensorflow:
     output: true
     permalink: /:collection/:path/
@@ -301,6 +307,16 @@ collections:
 
 # Defaults
 defaults:
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+  - scope:
+      path: ''
+      type: categories
+    values:
+      layout: category
   # _posts
   - scope:
       path: ""
