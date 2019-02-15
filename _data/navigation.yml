@@ -1,0 +1,30 @@
+# main links
+main:
+  - title: "About"
+    url: /About/
+  - title: "Lecture Note"
+    url: /categories/lecture-note
+  - title: "Machine Learning"
+    url: /categories/Machine-Learning
+  - title: "Workshop Note"
+    url: /categories/Workshop
+  - title: "TensorFlow"
+    url: /tensorflow/main/
+  - title: "Year Archive"
+    url: /year-archive/
+
+tensorflow:
+  - title: Basics Introduction
+    children:
+      - title: "TensorFlow 基本介紹"
+        url: /tensorflow/introduction/
+      - title: "TensorFlow: Dataflow Graph"
+        url: /tensorflow/flowgraph/
+      - title: "TensorFlow: 什麼是Tensor"
+        url: /tensorflow/WhatisTensor/
+      - title: "TensorFlow: tf.Variable()"
+        url: /tensorflow/variable/
+      - title: "TensorFlow: tf.placeholder()"
+        url: /tensorflow/placeholder/
+      - title: "TensorFlow: GPU的相關控制"
+        url: /tensorflow/GPUcontrol/
