@@ -2,10 +2,10 @@
 main:
   - title: "About"
     url: /About/
-  - title: "Research Related"
-    url: /categories/Research
   - title: "Lecture Note"
     url: /categories/lecture-note
+  - title: "Machine Learning"
+    url: /categories/machine-learning
   - title: "Workshop Note"
     url: /categories/workshop
   - title: "TensorFlow"
@@ -14,7 +14,7 @@ main:
     url: /year-archive/
 
 tensorflow:
-  - title: TensorFlow 相關文件
+  - title: Basics Introduction
     children:
       - title: "TensorFlow 基本介紹"
         url: /tensorflow/introduction/
