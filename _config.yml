@@ -263,17 +263,17 @@ tag_archive:
 #  type: liquid
 #  path: /tags/
 
-#jekyll-archives:
-#  enabled:
-#    - categories
-#    - tags
-#  layouts:
-#    category: archive-taxonomy
-#    tag: archive-taxonomy
-#  permalinks:
-#    category: /categories/:name/
-#    tag: /tags/:name/
-#    TensorFlow: /TensorFlow/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+    TensorFlow: /TensorFlow/:name/
 
 
 # https://github.com/jekyll/jekyll-archives
