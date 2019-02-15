@@ -3,11 +3,11 @@ main:
   - title: "About"
     url: /About/
   - title: "Lecture Note"
-    url: /categories/Lecture-Note
+    url: /tags/Lecture-Note
   - title: "Machine Learning"
-    url: /categories/Machine-Learning
+    url: /tags/Machine-Learning
   - title: "Workshop Note"
-    url: /categories/Workshop
+    url: /tags/Workshop
   - title: "TensorFlow"
     url: /tensorflow/main/
   - title: "Year Archive"
