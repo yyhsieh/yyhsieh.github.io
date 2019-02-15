@@ -12,8 +12,6 @@ main:
     url: /tensorflow/main/
   - title: "Archive"
     url: /year-archive/
-  - title: "_____Search"
-    url: /search/
 
 tensorflow:
   - title: Basic Introduction
