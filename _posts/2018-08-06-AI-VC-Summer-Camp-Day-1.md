@@ -1,5 +1,7 @@
 ---
 title: "AI VC Summer Camp Day1"
+categories:
+  - workshop
 tags:
   - workshop
   - machine-learning
