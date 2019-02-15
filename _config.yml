@@ -256,12 +256,6 @@ category_archive:
 tag_archive:
   type: jekyll-archives
   path: /tags/
-#category_archive:
-#  type: liquid
-#  path: /categories/
-#tag_archive:
-#  type: liquid
-#  path: /tags/
 
 jekyll-archives:
   enabled:
@@ -274,7 +268,6 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
     TensorFlow: /TensorFlow/:name/
-
 
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
@@ -296,12 +289,12 @@ compress_html:
     envs: development
 
 collections:
-  categories:
-    output: true
-    permalink: /categories/:name/ # optional
-  tags:
-    output: true
-    permalink: /tags/:name/ # optional
+  #categories:
+  #  output: true
+  #  permalink: /categories/:name/ # optional
+  #tags:
+  #  output: true
+  #  permalink: /tags/:name/ # optional
   tensorflow:
     output: true
     permalink: /:collection/:path/
