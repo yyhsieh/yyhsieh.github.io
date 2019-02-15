@@ -1,8 +1,8 @@
 ---
 title: "AI VC Summer Camp Day1"
-categories:
+tags:
   - Workshop
-  - Machine-Learning 
+  - Machine-Learning
 toc: true
 toc_sticky: true
 related: false
