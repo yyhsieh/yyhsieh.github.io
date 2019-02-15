@@ -264,8 +264,8 @@ jekyll-archives:
     category: archive-taxonomy
     tag: archive-taxonomy
   permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+    category: /:categories/:name/
+    tag: /:tags/:name/
     TensorFlow: /TensorFlow/:name/
 
 # https://github.com/jekyll/jekyll-archives
@@ -290,13 +290,14 @@ compress_html:
 collections:
   categories:
     output: true
-    permalink: /category/:name/ # optional
+    permalink: /categories/:name/ # optional
   tags:
     output: true
     permalink: /tags/:name/ # optional
   tensorflow:
     output: true
     permalink: /:collection/:path/
+
 
 # Defaults
 defaults:
