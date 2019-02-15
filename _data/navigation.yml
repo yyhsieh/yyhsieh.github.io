@@ -5,9 +5,9 @@ main:
   - title: "Lecture Note"
     url: /categories/lecture-note
   - title: "Machine Learning"
-    url: /categories/Machine-Learning
+    url: /categories/machine-learning
   - title: "Workshop Note"
-    url: /categories/Workshop
+    url: /categories/workshop
   - title: "TensorFlow"
     url: /tensorflow/main/
   - title: "Year Archive"
