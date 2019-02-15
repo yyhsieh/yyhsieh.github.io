@@ -1,8 +1,8 @@
 ---
 title: Machine Learning
 layout: archieve
-permalink: /categories/Machine-Learning/
-taxonomy: Machine Learning
+permalink: /categories/machine-learning/
+taxonomy: machine-learning
 author_profile: true
 ---
 
