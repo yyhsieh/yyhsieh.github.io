@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "YYH Hello World :)"
+title                    : "YYH Hello World"
 title_separator          : "-"
 name                     : "Yi-Yen Hsieh"
 description              : "A PhD Candidate in National Taiwan University(NTU), Taipei, Taiwan."
@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Yi-Yen Hsieh"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "A PhD candidate in NTU, recording daily research details."
+  bio              : "A PhD candidate in NTU, <br/ > recording daily research details."
   location         : "Taiwan, Taipei"
   email            : D06943001@ntu.edu.tw
   links:
@@ -118,13 +118,10 @@ author:
       #url: mailto:D06943001@ntu.edu.tw
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "http://yyhsieh.github.io"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://www.facebook.com/jocelyn923"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/yyhsieh"
@@ -140,7 +137,7 @@ footer:
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: https://www.facebook.com/jocelyn923"
     - label: "GitHub"
       url: "https://github.com/yyhsieh"
       # url:
@@ -269,6 +266,7 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+    TensorFlow: /TensorFlow/:name/
     
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
@@ -281,7 +279,6 @@ jekyll-archives:
 #  permalinks:
 #    category: /categories/:name/
 #    tag: /tags/:name/
-
 
 # HTML Compression
 # - http://jch.penibelst.de/
@@ -297,6 +294,9 @@ collections:
   categories:
     output: true
     permalink: /:name/ # optional
+  tensorflow:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -307,7 +307,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
       share: true
       related: true
   # _pages
@@ -317,13 +317,14 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _MachineLearning
+  # _tensorflow
   - scope:
       path: ""
-      type: MachineLearning
+      type: tensorflow
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: true
+      sidebar:
+        nav: "tensorflow"
 
-      
