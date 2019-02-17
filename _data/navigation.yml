@@ -4,13 +4,15 @@ main:
     url: /About/
   - title: "Research"
     url: /categories/Research
+  - title: "TensorFlow"
+    url: /tensorflow/main/
   - title: "Lecture Note"
     url: /categories/lecture-note
   - title: "Workshop"
     url: /categories/workshop
-  - title: "TensorFlow"
-    url: /tensorflow/main/
-  - title: "Archive"
+  - title: "Tag Archive"
+    url: /tags/
+  - title: "Year Archive"
     url: /year-archive/
 
 tensorflow:
