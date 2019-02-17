@@ -1,5 +1,5 @@
 ---
-title: Workshop
+title: Workshop Note
 layout: archive
 permalink: /categories/workshop/
 taxonomy: workshop
