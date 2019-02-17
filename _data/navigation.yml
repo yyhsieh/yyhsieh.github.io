@@ -7,7 +7,7 @@ main:
   - title: "TensorFlow"
     url: /tensorflow/main/
   - title: "Lecture Note"
-    url: /categories/lecture-note
+    url: /categories/lecture
   - title: "Workshop"
     url: /categories/workshop
   - title: "Tag Archive"
