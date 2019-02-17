@@ -111,7 +111,7 @@ analytics:
 author:
   name             : "Yi-Yen Hsieh"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "A PhD candidate in NTU, <br/ > recording daily research details."
+  bio              : "A PhD candidate in NTU, <br/ > This is where I record daily research details."
   location         : "Taiwan, Taipei"
   email            : D06943001@ntu.edu.tw
   links:
