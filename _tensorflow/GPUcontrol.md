@@ -1,8 +1,5 @@
 ---
 title: "TensorFlow: GPU的相關控制"
-header:
-  teaser: /assets/images/page-header-og-image.png
-  og_image: /assets/images/page-header-og-image.png
 comments: true
 toc: True
 toc_sticky: True
