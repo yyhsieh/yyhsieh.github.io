@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow 教學與心得"
 header:
+  teaser: /assets/images/page-header-og-image.png
   og_image: /assets/images/page-header-og-image.png
 comments: true
 toc: false

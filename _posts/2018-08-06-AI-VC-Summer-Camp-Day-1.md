@@ -2,6 +2,7 @@
 title: "AI VC Summer Camp Day1"
 comments: true
 header:
+  teaser: /assets/images/page-header-og-image.png
   og_image: /assets/images/page-header-og-image.png
 permalink: /categories/workshop/AI-VC-Summer-Camp-Day-1/
 categories:

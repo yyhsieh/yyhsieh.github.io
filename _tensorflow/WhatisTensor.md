@@ -1,6 +1,7 @@
 ---
 title: "TensorFlow: 什麼是Tensor"
 header:
+  teaser: /assets/images/page-header-og-image.png
   og_image: /assets/images/page-header-og-image.png
 comments: true
 toc: True
