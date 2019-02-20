@@ -8,6 +8,7 @@ author_profile: false
 tags:
   - Tensorflow
   - Tensor
+  - Machine Learning
 ---
 <br />
 Tensor是整體Tensorflow的架構中，最重要的概念之一。
