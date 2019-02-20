@@ -42,13 +42,13 @@ place all inputs in the memory
 
 ### Advantages
 
-1) More generic input format
+1. More generic input format
 (任何vector都可以input)
 像是bag of words / image feature / feature position
-2) out-of-order access to input data
-3) less distracted by unimportant inputs
-4) longer term memorization
-5) no vanishing / exploding gradients 
+2. out-of-order access to input data
+3. less distracted by unimportant inputs
+4. longer term memorization
+5. no vanishing / exploding gradients 
 (不會重複propagate W)
 
 ### Disadvantages
@@ -87,11 +87,11 @@ Dimension of W:R^(|V|xD)
 
 ### Netowork實作中的技巧
 
-1) BOW(Setence representation)
-2) Position encoding (Setence representation)
-3) temportal encoding: change the order of sentence input will change the results,
+1. BOW(Setence representation)
+2. Position encoding (Setence representation)
+3. temportal encoding: change the order of sentence input will change the results,
 是一個需要被學習的 matrix，用於encode input句子的順序
-4) 在空的memory中加入10% random noise做initialization
+4. 在空的memory中加入10% random noise做initialization
 
 Joint Training: 同時訓練多個模型
 比較多hops有助於performance提升（K=3）
@@ -174,20 +174,20 @@ NTM: 持續不斷寫入跟讀取，network是用來學習「何時要read/write 
 + 加上 Temporl memory linkage (reading)
 
 ### Reasons of dynamic memory allocation
-1) 因為NTM只有在連續的memory blocks allocate memory，
+1. 因為NTM只有在連續的memory blocks allocate memory，
 但這樣的話需要管理記憶體（否則資料會沒有ptr指向&難處理）
-2) 沒辦法釋放memory
-3) location addressing 需要大量的連續記憶體
+2. 沒辦法釋放memory
+3. location addressing 需要大量的連續記憶體
 
 ### Reasons of Temporal memory linkage 
-1) search complexity by time
-2) preserving temporal order (track the order of writing)
+1. search complexity by time
+2. preserving temporal order (track the order of writing)
 
 ### NTM和DNC的差異
-1) DNC有更多的scalar gate用以計算weights間的內插值
-2) DNC引入memory retention vector用以更新usage vector：
-    a) 如果在前一個time step該memory的位置是write，則其retention weight應該比較大
-    b) 如果在前一個time step該memory的位置是read，則其retention weight應該比較小
+1. DNC有更多的scalar gate用以計算weights間的內插值
+2. DNC引入memory retention vector用以更新usage vector：
+    a. 如果在前一個time step該memory的位置是write，則其retention weight應該比較大
+    b. 如果在前一個time step該memory的位置是read，則其retention weight應該比較小
     
 ![](https://i.imgur.com/eZ1GY93.png)
 
@@ -197,15 +197,15 @@ represent the writing order of memory slots
 ---
 
 ### Write weighting
-1) Content-based addressing
-2) Dynamic memory allocation
+1. Content-based addressing
+2. Dynamic memory allocation
 
 ![](https://i.imgur.com/1AWbfGH.png)
 ![](https://i.imgur.com/Ci2K0PG.png)
 
 ### Read weighting
-1) Content-based addressing
-2) Temporal memory linkage
+1. Content-based addressing
+2. Temporal memory linkage
 
 ![](https://i.imgur.com/a8q8i7S.png)
 ![](https://i.imgur.com/sLz8Blz.png)
