@@ -32,11 +32,10 @@ Vision and Learning 電腦視覺與深度學習暑期研習
 
 ## Transfer Learning的目標:
 
-解決Data-oriented problem中**沒有足夠label data**的問題
-Collecting/annotating data is typically expensive.
-希望能夠讓source domain -> target domain 
-不過synthesis data和real data之間，還是有domain gap，
-所以要想辦法解決這部分。
+- 解決Data-oriented problem中**沒有足夠label data**的問題
+- Collecting/annotating data is typically expensive
+- 希望能夠讓source domain -> target domain 
+- 不過synthesis data和real data之間，還是有domain gap，所以要想辦法解決這部分。
 
 e.g. Imbalanced medical image 
 e.g. Style transfer
@@ -53,18 +52,18 @@ e.g. Style transfer
 e.g.在時間A所label的image -> 預測時間B(or季節等)的image
 transfer learning在比較複雜的style -> 比較簡單的style比較好做 
 
-透過face domain的互相轉換，可以比較容易知道到底feature是如何轉換的，
-讓所謂ML是black box的說法變得更加explantible
+- 透過face domain的互相轉換，可以比較容易知道到底feature是如何轉換的，
+- 讓所謂ML是black box的說法變得更加explainable
 
 ![](https://i.imgur.com/Sdz1KUi.png)
 
-如果在target domain沒有label的話沒辦法做instance transfer
-把source domain和target domain的data合在一起做classifier(instance transfer)
+- 如果在target domain沒有label的話沒辦法做instance transfer
+- 把source domain和target domain的data合在一起做classifier(instance transfer)
 
 ![](https://i.imgur.com/kHrTtBo.png)
 
-需要有一個common feature space
-但可以把兩個domain的data拆開（分為兩類，但project在同一feature space上）
+- 需要有一個common feature space
+- 但可以把兩個domain的data拆開（分為兩類，但project在同一feature space上）
 
 ---
 
@@ -74,11 +73,11 @@ borrow the features/classfiers from source domain -> apply to the domain of inte
 ## Challenges in Domain Adaptation
 
 ### 1) Domain Shift / Bias / Mismatch(這三個是一樣的)
-AKA domain bias, domain mismatch, etc.
-e.g. Audio recognition: different speakers, environments, quality, etc.
-不需要考慮feature space的問題
+- AKA domain bias, domain mismatch, etc.
+- e.g. Audio recognition: different speakers, environments, quality, etc.
+- 不需要考慮feature space的問題
+- Minimize the Maximum Mean Discrepancy(MMD)
 
-Minimize the Maximum Mean Discrepancy(MMD)
 ![](https://i.imgur.com/4EVWA6R.png)
 mean error of source domain - mean error of target domain
 
@@ -89,8 +88,8 @@ mean error of source domain - mean error of target domain
 
 ### 2) Homogeneous vs. Heterogeneous DA
 
-Homogeneous:兩個domain的feature表示方式是一樣的，但distribution不同
-Heterogeneous:兩個domain的feature表示方式不同，因此distribution非常不同
+- Homogeneous:兩個domain的feature表示方式是一樣的，但distribution不同
+- Heterogeneous:兩個domain的feature表示方式不同，因此distribution非常不同
 
 ![](https://i.imgur.com/oCIAaxZ.png)
 ![](https://i.imgur.com/juM6weR.png)
@@ -110,20 +109,21 @@ source domain和target domain的data數目差很多
 - Hard way: data selection 
 - Soft way: data reweighting
 
-如果只有semi-supervised / unsupervised data
+如果只有semi-supervised / unsupervised data </br >
 應該要如何才能降低element-wise的error？
 
 ## Transfer Component Analysis (TCA)
-1) Unsupervised DA
-2) Matching cross-domain marginal (global) distributions
+1. Unsupervised DA
+2. Matching cross-domain marginal (global) distributions
 
 ## Joint Distribution Adaptation (JDA)
-1) Unsupervised DA
-2) In addition to matching cross-domain marginal (global) distributions, conditional (class-wise) distributions across data domains are also aligned.
+1. Unsupervised DA
+2. In addition to matching cross-domain marginal (global) distributions,conditional (class-wise) distributions across data domains are also aligned.
 
 ### 在target domain沒有label：
-(predict the target domain data -> 給pseudo label with confidence + label propagation) do it iterativelly 
--> minimize both class-wise and global avg. error
+- (predict the target domain data
+- -> 給pseudo label with confidence + label propagation) do it iterativelly
+- -> minimize both class-wise and global avg. error
 
 ### 如何看現在pseudo label是對的：
 在training的過程中相對的loss有持續的下降，代表目前的representation是有持續matching的。
@@ -142,8 +142,8 @@ Question:
 
 ### Domain-Adversarial Training of Neural Networks (DANN)
 ![](https://i.imgur.com/ftAtgWG.png)
-not standard back propagation -> gradient reversal layer 
-和GAN的training方式有點相同，試圖要騙過feature f
+- not standard back propagation -> gradient reversal layer
+- 和GAN的training方式有點相同，試圖要騙過feature f
 
 ---
 
@@ -152,9 +152,9 @@ not standard back propagation -> gradient reversal layer
 Shared Encoder: 只extract content features only
 style and texture / background features in the two private encoders, respectively.
 
-有label的地方一樣可以計算classification loss
-沒有label的地方就像是autoencoder的概念（要把feature還原回來）
-一樣透過back propagation來做training 
+- 有label的地方一樣可以計算classification loss
+- 沒有label的地方就像是autoencoder的概念（要把feature還原回來）
+- 一樣透過back propagation來做training 
 
 ---
 
@@ -175,8 +175,8 @@ style and texture / background features in the two private encoders, respectivel
 
 ### Semantic Segmentation Across Cities
 
-透過Google Time Machine可以搜集到一個地點不同時間的image
-並同時做static object matching
+- 透過Google Time Machine可以搜集到一個地點不同時間的image
+- 並同時做static object matching
 
 ---
 
@@ -193,17 +193,17 @@ style and texture / background features in the two private encoders, respectivel
 
 ![](https://i.imgur.com/Hwdd1z0.png)
 
-用VAE(variational autoencoder) 或是其他的model
-for unpaird data: 如何計算reconsturction error?
-discriminator用來判斷中間是painting還是photo
-可以根據input image來計算reconstruction error
+- 可以用VAE(variational autoencoder) 或是其他的model
+- for unpaird data: 如何計算reconsturction error?
+- discriminator用來判斷中間是painting還是photo
+- 可以根據input image來計算reconstruction error
 (based on autoencoder機制，算兩個GAN model input和output的MSE)
 
-1) First GAN (G1, D1): Photo to Painting
-2) Second GAN (G2, D2): Photo to Painting
+1. First GAN (G1, D1): Photo to Painting
+2. Second GAN (G2, D2): Photo to Painting
 
-a) Photoconsistency
-b) Painting consistency
+a. Photoconsistency
+b. Painting consistency
 
 ![](https://i.imgur.com/YPNlNOe.png)
 ![](https://i.imgur.com/UVSRZSR.png)
@@ -217,34 +217,35 @@ CycleGAN的缺點：沒有common feature space可以用來做classification
 ---
 
 ### UNIT
-1) 不需要pair-wise training data
-2) 有shared feature representation (no cross-domain feature transformation)
-4) common feature space 
+1. 不需要pair-wise training data
+2. 有shared feature representation (no cross-domain feature transformation)
+3. common feature space 
 
-Unsupervised Image-to-Image Translation Networks
-把VAE和GAN結合
+- Unsupervised Image-to-Image Translation Networks
+- 把VAE和GAN結合
+
 ![](https://i.imgur.com/dPmxp7U.png)
 
-用同樣的Z (feature vector) -> 強迫X1和X2的distribution相近
-E1->G1 或是 E1->G2
-E2->G2 或是 E2->G1
-discriminator D1: 用來判斷是不是 day-time image（和路徑無關，只判斷input的T/F）
-discriminator D2: 用來判斷是不是 night-time image（和路徑無關，只判斷input的T/F）
+- 用同樣的Z (feature vector) -> 強迫X1和X2的distribution相近
+- E1->G1 或是 E1->G2
+- E2->G2 或是 E2->G1
+- discriminator D1: 用來判斷是不是 day-time image（和路徑無關，只判斷input的T/F）
+- discriminator D2: 用來判斷是不是 night-time image（和路徑無關，只判斷input的T/F）
 
 ---
 
 ### Domain Transfer Networks
 ![](https://i.imgur.com/P4ZaHjj.png)
 
-half the UNIT structure
-同時保持image consistency和feature consistency
+- half the UNIT structure
+- 同時保持image consistency和feature consistency
 
-feature encoder 只encode content information
-但decoder conver the latent vector to original image (reconstruct the style information)
+- feature encoder 只encode content information
+- 但decoder conver the latent vector to original image (reconstruct the style information)
 
-D是用來判斷是否是comic style
-f和f之間保持feature consistency
-input和G出來的圖保持image consistency
+- D是用來判斷是否是comic style
+- f和f之間保持feature consistency
+- input和G出來的圖保持image consistency
 
 ![](https://i.imgur.com/S9ykHkI.png)
 
@@ -259,9 +260,9 @@ input和G出來的圖保持image consistency
 
 ### AC-GAN
 [supervised] learning for entangling image representation
-latent 是來自於real data
-c: image information
-multi-task discriminator
+- latent 是來自於real data
+- c: image information
+- multi-task discriminator
 
 ![](https://i.imgur.com/EFhSbB3.png)
 
@@ -269,15 +270,16 @@ multi-task discriminator
 
 ### Info-GAN
 [unsupervised] learning, no real information
-latent 是來自於synthetic data 
-D的作用是當成cluster,分成C群
+- latent 是來自於synthetic data 
+- D的作用是當成cluster,分成C群
+
 ![](https://i.imgur.com/1hmveJr.png)
 
 ---
 
 ### StarGAN
-前面的GAN只能處理1-to-1 domain transfer
-StarGAN可以用來處理multi-domain image-to-image translation
+- 前面的GAN只能處理1-to-1 domain transfer
+- StarGAN可以用來處理multi-domain image-to-image translation
 
 ![](https://i.imgur.com/0DfcFMq.png)
 ![](https://i.imgur.com/RJd8CK2.png)
