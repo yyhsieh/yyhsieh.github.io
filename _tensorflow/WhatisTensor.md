@@ -5,6 +5,9 @@ toc: True
 toc_sticky: True
 related: false
 author_profile: false
+tags:
+  - Tensorflow
+  - Tensor
 ---
 <br />
 Tensor是整體Tensorflow的架構中，最重要的概念之一。
