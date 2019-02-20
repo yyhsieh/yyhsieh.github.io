@@ -8,6 +8,7 @@ author_profile: false
 tags:
   - Tensorflow
   - GPU
+  - Machine Learning
 ---
 <br />
 儘管TensorFlow會自動決定要使用GPU或是CPU來加速，有必要的話也會將tensor複製到兩者的memory中，但很多時候我們還是會期望可以自己控制GPU的流程，該怎麼處理呢？以下介紹一些跟GPU控制有關的function與如何使用。
