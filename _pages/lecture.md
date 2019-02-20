@@ -6,5 +6,9 @@ taxonomy: lecture
 author_profile: true
 ---
 
+## 
 
+- 宏毅哥講GAN
+- 
 
+## Seminar
