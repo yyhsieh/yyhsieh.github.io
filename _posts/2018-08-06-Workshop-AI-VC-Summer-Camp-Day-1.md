@@ -146,13 +146,14 @@ a set of parallel R/W heads
 soft attention on memory highly sparsely
 
 ### Content Addressing 
-根據內容決定要拿哪裡的memory而不是看storage的位置，It is typically used for high-speed storage and retrieval of fixed content
-focuses attention on locations based on the similarity between their current values and values emitted by the controller.
+- 根據內容決定要拿哪裡的memory而不是看storage的位置
+- It is typically used for high-speed storage and retrieval of fixed content
+- focuses attention on locations based on the similarity between their current values and values emitted by the controller.
 
 ### Intepolation for Location-based addressing
-The location-based addressing mechanism is designed to facilitate both simple iteration across the locations of the memory and random-access jumps. It does so by implementing a rotational shift of a weighting.
-gate = 1 : 使用目前的memory,忽略過去一個time step的
-gate = 0 : 使用過去一個time step的memory
+- The location-based addressing mechanism is designed to facilitate both simple iteration across the locations of the memory and random-access jumps. It does so by implementing a rotational shift of a weighting.
+- gate = 1 : 使用目前的memory,忽略過去一個time step的memory
+- gate = 0 : 使用過去一個time step的memory
 
 ### Convoliutional Shift
 allowed integers shift
@@ -161,8 +162,8 @@ allowed integers shift
 ---
 
 ## MemNN v.s. NTM
-MemNN: memory是static，只有關注如何retrive/read information from memory
-NTM: 持續不斷寫入跟讀取，network是用來學習「何時要read/write memory」/ memory的interface會比較彈性，但結構就比較複雜
+- MemNN: memory是static，只有關注如何retrive/read information from memory
+- NTM: 持續不斷寫入跟讀取，network是用來學習「何時要read/write memory」/ memory的interface會比較彈性，但結構就比較複雜
 
 ---
 
@@ -170,8 +171,8 @@ NTM: 持續不斷寫入跟讀取，network是用來學習「何時要read/write 
 ![](https://i.imgur.com/VcdFMm5.png)
 
 有比較複雜的memory addressing mechanism，和NTM相比
-+ 加上 Dynamic memory allocation (writing)
-+ 加上 Temporl memory linkage (reading)
+- + 加上 Dynamic memory allocation (writing)
+- + 加上 Temporl memory linkage (reading)
 
 ### Reasons of dynamic memory allocation
 1. 因為NTM只有在連續的memory blocks allocate memory，
