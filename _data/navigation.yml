@@ -3,7 +3,7 @@ main:
   - title: "About"
     url: /About/
   - title: "Research"
-    url: /categories/Research
+    url: /categories/research
   - title: "TensorFlow"
     url: /tensorflow/main/
   - title: "Lecture Note"
