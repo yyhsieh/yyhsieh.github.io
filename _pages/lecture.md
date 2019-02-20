@@ -6,7 +6,7 @@ taxonomy: lecture
 author_profile: true
 ---
 
-## 
+## 各種演講
 
 - 宏毅哥講GAN
 - 
