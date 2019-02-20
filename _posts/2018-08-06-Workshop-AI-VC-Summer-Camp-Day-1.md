@@ -7,6 +7,7 @@ categories:
 tags:
   - Workshop Note
   - Machine Learning
+  - Memory
 toc_label: Content
 toc: true
 toc_sticky: true
@@ -25,6 +26,8 @@ Vision and Learning 電腦視覺與深度學習暑期研習
 [paper連結](https://arxiv.org/pdf/1503.08895.pdf)
 
 ---
+
+# Memory Networks and Their Applications
 
 ## MemN2N Network
 
