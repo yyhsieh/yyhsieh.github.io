@@ -14,9 +14,17 @@ related: false
 author_profile: true
 ---
 
-2018暑假辦在清大的AI VC Summer Camp紀錄，今天的內容主要：
+2018暑假辦在清大的AI VC Summer Camp紀錄，講者為Prof. Gunhee Kim，
+演講的主軸是Memory Networks and Their Applications。
 
-[投影片連結](https://arxiv.org/pdf/1503.08895.pdf)
+2018 AI Summer School:
+Vision and Learning 電腦視覺與深度學習暑期研習
+
+[網站網址](https://jazzgirl526.wixsite.com/vlss2018)
+[投影片連結](https://jazzgirl526.wixsite.com/vlss2018/lecturer-abstract)
+[paper連結](https://arxiv.org/pdf/1503.08895.pdf)
+
+---
 
 ## MemN2N Network
 
@@ -30,6 +38,7 @@ place all inputs in the memory
 ![](https://i.imgur.com/zjfl7iE.png)
 
 ### Advantages
+
 1) More generic input format
 (任何vector都可以input)
 像是bag of words / image feature / feature position
@@ -39,10 +48,12 @@ place all inputs in the memory
 5) no vanishing / exploding gradients 
 (不會重複propagate W)
 
-## Disadvantages
+### Disadvantages
 
  讓model決定哪一段memory要access，
  而不是用來訓練weights
+
+---
 
 ## End-to-End Memory Networks
 
@@ -50,35 +61,43 @@ place all inputs in the memory
 ![](https://i.imgur.com/IFoWS0z.png)
 把input分成兩路餵進output memory和input memory中
 
-input memory:計算 attention weights
-second memory:access memory slots(用來訓練哪個位置的memory是需要被access的) decide which memory slot should be accessed
-
-soft attention (使用softmax): probability of accessing memory slots
+- input memory: 計算 attention weights
+- second memory: access memory slots(用來訓練哪個位置的memory是需要被access的)
+to decide which memory slot should be accessed
+- soft attention (使用softmax): probability of accessing memory slots
 
 Dimension of memory / bag-of-words 必須在事前先決定好
 Dimension of W:R^(|V|xD)
 
-### Multi-hop Reasoning
+--- 
+
+## Multi-hop Reasoning
 對於整個input/output memory unit access多次
 
-#### Weight sharing:
+---
+
+## Weight sharing:
 1) adjacent (前一層的output W是下一層的input W)
 2) layer-wise in/out embeddings are the same across all layers 
 
+---
+
 ### Netowork實作中的技巧
+
 1) BOW(Setence representation)
 2) Position encoding (Setence representation)
-3) temportal encoding: change the order of sentence input will change the results, is a 需要被學習的 matrix，用於 encode input句子的順序
+3) temportal encoding: change the order of sentence input will change the results,
+是一個需要被學習的 matrix，用於encode input句子的順序
 4) 在空的memory中加入10% random noise做initialization
 
-joint training: 同時訓練多個模型
+Joint Training: 同時訓練多個模型
 比較多hops有助於performance提升（K=3）
 
 ---
 
 ## Key-Value Memory Networks (KV-MemNN): Neural Programming
 
-https://arxiv.org/pdf/1606.03126.pdf
+[https://arxiv.org/pdf/1606.03126.pdf](https://arxiv.org/pdf/1606.03126.pdf)
 
 generalize the way context is stored in the memory
 structured memories as key-value
@@ -101,13 +120,12 @@ taking avg of memory values
 ### 如何建立 key-value 的關係
 KV triple: subject relation object
 
-
 ---
 
 ## Neural Turing Machines
-https://arxiv.org/pdf/1410.5401.pdf
 
-http://www.robots.ox.ac.uk/~tvg/publications/talks/NeuralTuringMachines.pdf
+[https://arxiv.org/pdf/1410.5401.pdf](https://arxiv.org/pdf/1410.5401.pdf)
+[http://www.robots.ox.ac.uk/~tvg/publications/talks/NeuralTuringMachines.pdf](http://www.robots.ox.ac.uk/~tvg/publications/talks/NeuralTuringMachines.pdf)
 
 ### RNN is enough?
 如果只有幾個hidden state是否足以代表長的句子？
@@ -122,7 +140,6 @@ using 額外的process和external memory 互動
 ### Blurry Read / Write 
 a set of parallel R/W heads
 透過controller來控制memory
-
 soft attention on memory highly sparsely
 
 ### Content Addressing 
@@ -138,7 +155,7 @@ gate = 0 : 使用過去一個time step的memory
 allowed integers shift
 （通常是找前後幾個time-step的memory）
 
-### Sharpening 
+---
 
 ## MemNN v.s. NTM
 MemNN: memory是static，只有關注如何retrive/read information from memory
@@ -154,7 +171,8 @@ NTM: 持續不斷寫入跟讀取，network是用來學習「何時要read/write 
 + 加上 Temporl memory linkage (reading)
 
 ### Reasons of dynamic memory allocation
-1) 因為NTM只有在連續的memory blocks allocate memory，但這樣的話需要管理記憶體（否則資料會沒有ptr指向&難處理）
+1) 因為NTM只有在連續的memory blocks allocate memory，
+但這樣的話需要管理記憶體（否則資料會沒有ptr指向&難處理）
 2) 沒辦法釋放memory
 3) location addressing 需要大量的連續記憶體
 
@@ -173,18 +191,20 @@ NTM: 持續不斷寫入跟讀取，network是用來學習「何時要read/write 
 ### Temporal Memory Linkage (Linkage matrix, L_{t})
 represent the writing order of memory slots
 
-#### Write weighting
+---
+
+### Write weighting
 1) Content-based addressing
 2) Dynamic memory allocation
 
 ![](https://i.imgur.com/1AWbfGH.png)
 ![](https://i.imgur.com/Ci2K0PG.png)
 
-
-#### Read weighting
+### Read weighting
 1) Content-based addressing
 2) Temporal memory linkage
 
 ![](https://i.imgur.com/a8q8i7S.png)
 ![](https://i.imgur.com/sLz8Blz.png)
 
+---
